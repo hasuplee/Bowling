@@ -33,3 +33,10 @@ def test_한_번의_스트라이크는_다음_2구를_보너스로_받는다():
     for _ in range(16):
         game.roll(0)
     assert game.score() == 24
+
+
+def test_퍼펙트_게임의_점수는_300이다():
+    game = Game()
+    for _ in range(12):
+        game.roll(10)
+    assert game.score() == 300

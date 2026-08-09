@@ -40,3 +40,13 @@ def test_퍼펙트_게임의_점수는_300이다():
     for _ in range(12):
         game.roll(10)
     assert game.score() == 300
+
+
+def test_10프레임이_스페어면_보너스_1구만_추가된다():
+    game = Game()
+    for _ in range(18):
+        game.roll(0)
+    game.roll(5)
+    game.roll(5)
+    game.roll(3)
+    assert game.score() == 13

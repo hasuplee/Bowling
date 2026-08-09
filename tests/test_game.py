@@ -50,3 +50,13 @@ def test_10프레임이_스페어면_보너스_1구만_추가된다():
     game.roll(5)
     game.roll(3)
     assert game.score() == 13
+
+
+def test_10프레임이_스트라이크면_보너스_2구만_추가된다():
+    game = Game()
+    for _ in range(18):
+        game.roll(0)
+    game.roll(10)
+    game.roll(5)
+    game.roll(3)
+    assert game.score() == 18

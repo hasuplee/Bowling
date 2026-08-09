@@ -60,3 +60,11 @@ def test_10프레임이_스트라이크면_보너스_2구만_추가된다():
     game.roll(5)
     game.roll(3)
     assert game.score() == 18
+
+
+def test_오픈_스페어_스트라이크가_섞인_게임의_점수를_정확히_계산한다():
+    game = Game()
+    rolls = [3, 4, 5, 5, 10, 2, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for pins in rolls:
+        game.roll(pins)
+    assert game.score() == 55
